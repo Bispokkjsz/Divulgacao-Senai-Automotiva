@@ -1,6 +1,5 @@
-<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="11" viewBox="0 0 24 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Vector">
-<path d="M0 0H24V3.66667H0V0Z" fill="#D9D9D9"/>
-<path d="M0 7.33333H24V11H0V7.33333Z" fill="#D9D9D9"/>
-</g>
+<svg width="24" height="18" viewBox="0 0 24 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="24" height="3" rx="1" fill="#D9D9D9"/>
+    <rect y="7.5" width="24" height="3" rx="1" fill="#D9D9D9"/>
+    <rect y="15" width="24" height="3" rx="1" fill="#D9D9D9"/>
 </svg>
