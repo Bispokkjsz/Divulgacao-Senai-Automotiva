@@ -71,6 +71,10 @@ a:focus-visible,summary:focus-visible { /* Destaca o elemento ao navegar pelo te
     padding: 14px 16px;
 }
 
+.menu-computador { /* Links visíveis no tablet e computador */
+    display: none;
+}
+
 .menu { /* Menu de navegação */
     position: relative;
 }
@@ -324,6 +328,26 @@ address {
 
 /* ==================== TABLET — DE 601px A 1100px ==================== */
 @media (min-width:601px) {
+    .menu { /* Esconde o menu recolhível */
+        display: none;
+    }
+
+    .menu-computador { /* Menu sempre visível */
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    .menu-computador a {
+        padding: 17px 20px;
+    }
+
+    .menu-computador a + a {
+        border-left: 1px solid white;
+    }
+
     .cabecalho { /* Cabeçalho vermelho */
         height: 104px;
         padding: 0 19px;
@@ -447,6 +471,14 @@ address {
 
 /* ==================== COMPUTADOR — A PARTIR DE 1101px ==================== */
 @media (min-width:1101px) {
+    .menu-computador {
+        font-size: 24px;
+    }
+
+    .menu-computador a {
+        padding: 12px 14px;
+    }
+
     .cabecalho { /* Cabeçalho vermelho */
         padding: 0 3.2%;
     }
@@ -708,6 +740,7 @@ address {
         color: var(--vermelho);
     }
 
+    .menu-computador a:hover,
     .menu nav a:hover {
         background: #0000001f;
     }
