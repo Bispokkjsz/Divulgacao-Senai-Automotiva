@@ -71,7 +71,13 @@ a:focus-visible,summary:focus-visible { /* Destaca o elemento ao navegar pelo te
     padding: 14px 16px;
 }
 
-.menu-computador { /* Links visíveis no tablet e computador */
+/* Partes ocultas no celular */
+.menu-computador,
+.modalidade,
+.sobre-curso,
+.inscricao>div:first-child,
+.chamada-inscricao h2,
+.texto-computador {
     display: none;
 }
 
@@ -96,7 +102,7 @@ a:focus-visible,summary:focus-visible { /* Destaca o elemento ao navegar pelo te
 }
 
 .menu nav {
-    display: none!important; /* !important dá prioridade a esta regra */
+    display: none;
     position: absolute;
     right: 0;
     top: 44px;
@@ -110,11 +116,11 @@ a:focus-visible,summary:focus-visible { /* Destaca o elemento ao navegar pelo te
 }
 
 .menu[open] nav { /* Seleciona o menu quando está aberto */
-    display: flex!important;
+    display: flex;
     flex-direction: column;
 }
 
-.menu nav a {
+.menu nav a, .menu-computador a {
     padding: 17px 20px;
 }
 
@@ -139,10 +145,6 @@ main {
     display: flex;
     flex-direction: column;
     padding: 27px 16px 32px;
-}
-
-.modalidade {
-    display: none;
 }
 
 h1 {
@@ -203,6 +205,12 @@ h1 {
     width: 94%;
     margin: auto;
     aspect-ratio: 3/2; /* Define a proporção entre largura e altura */
+    border-radius: 16px;
+}
+
+.foto-apresentacao img { /* Imagem dentro do picture */
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 16px;
 }
@@ -224,10 +232,6 @@ h1 {
 
 .informacoes-curso li+li {
     border-left: 1px solid #999;
-}
-
-.sobre-curso { /* Teoria e prática */
-    display: none;
 }
 
 .aprendizado { /* O que você vai aprender */
@@ -256,14 +260,14 @@ h1 {
     text-align: center;
 }
 
-.cartao-curso>img { /* Seleciona apenas os filhos diretos */
+.cartao-curso>picture img { /* Seleciona apenas os filhos diretos */
     width: 100%;
     aspect-ratio: 3/2;
     object-fit: cover;
     border-radius: 20px;
 }
 
-.cartao-curso:last-child>img { /* Seleciona o último elemento do grupo */
+.cartao-curso:last-child>picture img { /* Seleciona o último elemento do grupo */
     aspect-ratio: 4/3;
     object-position: top; /* Escolhe a parte da imagem que fica em destaque */
 }
@@ -286,10 +290,6 @@ h1 {
 .inscricao { /* Área de inscrição */
     padding: 15px 0 39px;
     text-align: center;
-}
-
-.inscricao>div:first-child,.chamada-inscricao h2,.texto-computador { /* Seleciona o primeiro elemento do grupo */
-    display: none;
 }
 
 .chamada-inscricao .botao {
@@ -340,10 +340,6 @@ address {
         font-style: italic;
     }
 
-    .menu-computador a {
-        padding: 17px 20px;
-    }
-
     .menu-computador a + a {
         border-left: 1px solid white;
     }
@@ -351,24 +347,6 @@ address {
     .cabecalho { /* Cabeçalho vermelho */
         height: 104px;
         padding: 0 19px;
-    }
-
-    .menu summary {
-        display: none;
-    }
-
-    .menu nav,.menu[open] nav {
-        display: flex!important;
-        position: static;
-        flex-direction: row;
-        width: auto;
-        box-shadow: none;
-        font-size: 12px;
-    }
-
-    .menu nav a+a {
-        border-top: 0;
-        border-left: 1px solid white;
     }
 
     .nome-curso { /* Faixa do curso */
@@ -471,8 +449,8 @@ address {
 
 /* ==================== COMPUTADOR — A PARTIR DE 1101px ==================== */
 @media (min-width:1101px) {
-    .menu-computador {
-        font-size: 24px;
+    .nome-curso, .texto-celular { /* Partes ocultas no computador */
+        display: none;
     }
 
     .menu-computador a {
@@ -483,7 +461,7 @@ address {
         padding: 0 3.2%;
     }
 
-    .marca,.menu nav {
+    .marca, .menu-computador {
         font-size: 24px;
     }
 
@@ -491,14 +469,6 @@ address {
         border-left-width: 4px; /* Espessura da borda esquerda */
         margin-left: 16px;
         padding: 15px 24px;
-    }
-
-    .menu nav a {
-        padding: 12px 14px;
-    }
-
-    .nome-curso { /* Faixa do curso */
-        display: none;
     }
 
     .apresentacao { /* Apresentação do curso */
@@ -624,7 +594,7 @@ address {
         min-height: 540px;
     }
 
-    .cartao-curso:last-child>img {
+    .cartao-curso:last-child>picture img {
         aspect-ratio: 3/2;
     }
 
@@ -694,10 +664,6 @@ address {
         display: inline; /* Exibe junto do texto, sem criar outra linha */
     }
 
-    .texto-celular {
-        display: none;
-    }
-
     .redes-sociais { /* Ícones das redes sociais */
         gap: 110px;
         padding: 15px;
@@ -740,8 +706,7 @@ address {
         color: var(--vermelho);
     }
 
-    .menu-computador a:hover,
-    .menu nav a:hover {
+    .menu-computador a:hover {
         background: #0000001f;
     }
 
